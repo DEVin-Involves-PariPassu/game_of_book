@@ -5,9 +5,90 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(235, 231, 231);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container-books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 5px;
+
+  align-items: center;
+  gap: 10px;
+
+}
+
+.book-item-cover {}
+
+.book-item-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #9721BD;
+}
+
+.book-item-price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #9721BD;
+}
+
+.book-button {
+  background: #9721BD;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px;
+  color: #FFF;
+  font-weight: bold;
+}
+
+.book-button:hover {
+  background: #3d055096;
+
+}
+
+
+/* Menu Styles */
+
+.menu-container {
+  height: 34px;
+  background: #9721BD;
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menu-container h1 {
+  font-size: 16px;
+  color: #FFF;
+  font-style: italic;
+
+}
+
+.menu-container span {
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold;
 }
