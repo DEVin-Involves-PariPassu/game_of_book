@@ -118,3 +118,7 @@ code {
 .table-image {
   height: 100px;
 }
+
+.margin-button {
+  margin: 0px 5px;
+}
