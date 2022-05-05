@@ -122,3 +122,29 @@ code {
 .margin-button {
   margin: 0px 5px;
 }
+
+/* Styles detalhes */
+
+.book-container {
+  display: flex;
+  gap: 20px;
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.book-container img {
+  width: 250px;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+.book-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-content p {
+  font-size: 12px;
+}
