@@ -1,7 +1,8 @@
 import { priceFormat } from "utils/priceFormat"
 
 const INITIAL_STATE = {
-  items: []
+  items: [
+  ]
 }
 
 const cart = (state = INITIAL_STATE, action) => {

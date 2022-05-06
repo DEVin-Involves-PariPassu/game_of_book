@@ -1,14 +1,16 @@
 import React from 'react';
+import Swal from 'sweetalert2'
 import { useDispatch, useSelector } from 'react-redux';
 import { FaTrashAlt, FaMinusCircle, FaPlusCircle } from 'react-icons/fa'
 import { decrementAmountBookToCart, incrementAmountBookToCart, removeBookToCart } from 'store/modules/cart/actions'
-import Swal from 'sweetalert2'
 import { priceFormat } from 'utils/priceFormat';
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
 
   const cart = useSelector(state => state.cart)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const total = priceFormat(cart.items.reduce((acc, currentValue) => {
     return acc + (currentValue.price * currentValue.amount)
@@ -58,7 +60,7 @@ function Cart() {
                   onClick={() => dispatch(incrementAmountBookToCart(item.id))}
                 />
               </td>
-             
+
               <td>{item.priceFormatted}</td>
               <td>
                 <FaTrashAlt size={22} color="#9721BD" onClick={() => {
@@ -70,7 +72,7 @@ function Cart() {
                   }).then((result) => {
                     if (result.isConfirmed) {
                       dispatch(removeBookToCart(item.id))
-                    } 
+                    }
                   })
                 }} />
               </td>
@@ -78,7 +80,10 @@ function Cart() {
           ))}
         </tbody>
       </table>
-      <h1>Total: {total}</h1>
+      <div className='footer-cart'>
+        <h1>Total: {total}</h1>
+        <button className='book-button' onClick={() => navigate('/checkout')}>Finalizar compra</button>
+      </div>
     </div>
 
   );

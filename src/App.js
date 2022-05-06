@@ -1,9 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
+import { PersistGate } from 'redux-persist/integration/react'
+
 import { Provider } from "react-redux";
 import Menu from "./components/Menu";
 import Routes from "./routes";
 
-import store from "./store";
+import {store, persistor} from "./store";
 
 // * 1 - Configurar o componente de Provider no App.js 
 // * 2 - Configurar o create Store
@@ -13,10 +15,12 @@ import store from "./store";
 function App() {
   return (
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
         <Menu />
         <Routes />
       </BrowserRouter>
+      </PersistGate>
     </Provider>
   );
 }
