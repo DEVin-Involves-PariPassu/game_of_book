@@ -186,3 +186,13 @@ code {
   height: 34px;
   border-radius: 5px;
 }
+
+
+
+/* styles book form */
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
